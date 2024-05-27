@@ -54,7 +54,7 @@ export function createData(
     firstName,
     email,
     lastName,
-    createdAt: parseDateToTimezone(createdAt, -6),
+    createdAt: parseDateToTimezone(createdAt, -3),
   };
 }
 
