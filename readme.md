@@ -22,7 +22,7 @@ Docker: Docker Compose para orquestração dos contêineres
 
 ```sh
 git clone https://github.com/agloks/OM-Code
-cd seu-repositorio
+cd OM-Code
 ```
 
 2. **Suba os Contêineres com Docker Compose**
