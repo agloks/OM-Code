@@ -5,6 +5,7 @@ import { AuthService } from 'src/auth/auth.service';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { CreateUserValidatorPipe } from '../validations/users/user.validation.pipe';
 import { CreateUserReqDto, CreateUserReqSchema } from 'src/validations/users/create-user-req-dto-and-schema';
+import { UpdateUserReqDto, UpdateUserReqSchema } from 'src/validations/users/update-user-req-dto-and-schema';
 
 @Controller('users')
 export class UsersController {
@@ -26,7 +27,8 @@ export class UsersController {
     
     @UseGuards(AuthGuard)
     @Put()
-    async update(@Body() updateUserDto: Record<string, any>): Promise<any> {
+    @UsePipes(new CreateUserValidatorPipe<UpdateUserReqDto>(UpdateUserReqSchema))
+    async update(@Body() updateUserDto: UpdateUserReqDto): Promise<any> {
       const user = await this.usersService.updateUser(updateUserDto.id, updateUserDto);
       return { user };
     }

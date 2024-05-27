@@ -1,6 +1,7 @@
 {
     "type": "postgres",
     "port": 5432,
+    "url": "postgres://user:password@om_code_db:5432/mydatabase",
     "username": "user",
     "password": "password",
     "database": "mydatabase",

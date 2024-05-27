@@ -108,7 +108,7 @@ const headCells: readonly HeadCell[] = [
     id: "lastName",
     numeric: false,
     disablePadding: false,
-    label: "Último Nome",
+    label: "Sobrenome",
   },
   {
     id: "createdAt",
@@ -214,7 +214,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
           variant="subtitle1"
           component="div"
         >
-          {numSelected} selected
+          {numSelected} Selecionados
         </Typography>
       ) : (
         <Typography
@@ -261,7 +261,6 @@ export default function MyEnhancedTable() {
     try {
       const response = await tableUtils.fetchData();
       setUsersList(response);
-      console.log(response);
     } catch (err: any) {
       alert("Erro ao buscar dados: " + err.message);
     }
@@ -275,7 +274,6 @@ export default function MyEnhancedTable() {
       }
       const response = await tableUtils.fetchData();
       setUsersList(response);
-      console.log(response);
     } catch (err: any) {
       alert("Erro ao buscar dados: " + err.message);
     }
@@ -438,6 +436,7 @@ export default function MyEnhancedTable() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          labelRowsPerPage="Linhas por página"
         />
       </Paper>
     </Box>

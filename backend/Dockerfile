@@ -18,7 +18,7 @@ COPY . .
 RUN npm run build
 
 # Exponha a porta na qual o app vai rodar
-EXPOSE 3000
+EXPOSE 3300
 
 # Comando para rodar o aplicativo
-CMD ["npm", "run", "start:dev"]
+CMD ["npm", "run", "start"]

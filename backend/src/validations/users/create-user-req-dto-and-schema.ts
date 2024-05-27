@@ -17,10 +17,10 @@ export class CreateUserReqDto {
 }
 
 export const CreateUserReqSchema = Joi.object({
-  firstName: Joi.string().required(),
-  lastName: Joi.string().required(),
+  firstName: Joi.string().min(2).required(),
+  lastName: Joi.string().min(2).required(),
   email: Joi.string().email().required(),
-  password: Joi.string().required(),
+  password: Joi.string().min(6).required(),
 }).options({
   abortEarly: false,
 });

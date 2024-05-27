@@ -31,7 +31,6 @@ function parseDateToTimezone(isoString: string, offset: number): string {
 
   // Concatenar data e tempo
   const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
-  console.log(formattedDate);
   return formattedDate;
 }
 
@@ -91,7 +90,6 @@ export default class TableUtils {
   }
 
   async deleteUsers(ids: number[]): Promise<Boolean> {
-    console.log(ids)
     const response = await fetch(`${BACKEND_URL}/users/delete-many`, {
       method: "DELETE",
       headers: {

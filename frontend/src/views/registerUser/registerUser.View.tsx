@@ -34,10 +34,8 @@ export default function RegisterUserView() {
 
     vm.createUser(structuredData['email'], structuredData['password'], structuredData['firstName'], structuredData['lastName']).then((data) => {
       if (data.hasOwnProperty('user')) {
-        console.log('n entendi')
         navigate('/users-list');
       } else {
-        console.log(data);
         alert('Error ao cadastrar: \n' + data.message);
       }
     }).catch((error) => {
@@ -76,7 +74,7 @@ export default function RegisterUserView() {
                   required
                   fullWidth
                   id="firstName"
-                  label="First Name"
+                  label="Primeiro Nome"
                   autoFocus
                 />
               </Grid>
@@ -85,7 +83,7 @@ export default function RegisterUserView() {
                   required
                   fullWidth
                   id="lastName"
-                  label="Last Name"
+                  label="Sobrenome"
                   name="lastName"
                   autoComplete="family-name"
                 />
@@ -95,7 +93,7 @@ export default function RegisterUserView() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="Email"
                   name="email"
                   autoComplete="email"
                 />
@@ -105,7 +103,7 @@ export default function RegisterUserView() {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label="Senha"
                   type="password"
                   id="password"
                   autoComplete="new-password"

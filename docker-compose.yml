@@ -1,5 +1,5 @@
 services:
-  db:
+  om_code_db:
     image: postgres:13
     container_name: postgres
     environment:
@@ -9,25 +9,25 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - om_code_db-data:/var/lib/postgresql/data
 
-  backend:
+  om_code_backend:
     build: ./backend
-    container_name: backend
+    container_name: om_code_backend
     environment:
-      DATABASE_URL: postgres://user:password@db:5432/mydatabase
+      DATABASE_URL: postgres://user:password@om_code_db:5432/mydatabase
     ports:
-      - "3000:3000"
+      - "3300:3300"
     depends_on:
-      - db
+      - om_code_db
 
-  frontend:
+  om_code_frontend:
     build: ./frontend
-    container_name: frontend
+    container_name: om_code_frontend
     ports:
-      - "5173:3000"
+      - "5173:5173"
     depends_on:
-      - backend
+      - om_code_backend
 
 volumes:
-  db-data:
+  om_code_db-data:

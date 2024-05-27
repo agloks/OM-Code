@@ -42,7 +42,6 @@ export default function SignUpView() {
         dispatch(setUser(data["user"]));
         navigate('/users-list');
       } else {
-        console.log(data);
         alert('Error ao fazer cadastro: \n' + data.message);
       }
     }).catch((error) => {
@@ -81,7 +80,7 @@ export default function SignUpView() {
                   required
                   fullWidth
                   id="firstName"
-                  label="First Name"
+                  label="Primeiro Nome"
                   autoFocus
                 />
               </Grid>
@@ -90,7 +89,7 @@ export default function SignUpView() {
                   required
                   fullWidth
                   id="lastName"
-                  label="Last Name"
+                  label="Sobrenome"
                   name="lastName"
                   autoComplete="family-name"
                 />
@@ -100,7 +99,7 @@ export default function SignUpView() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label="Email"
                   name="email"
                   autoComplete="email"
                 />
@@ -110,7 +109,7 @@ export default function SignUpView() {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label="Senha"
                   type="password"
                   id="password"
                   autoComplete="new-password"
