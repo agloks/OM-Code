@@ -10,7 +10,9 @@ Este projeto é uma aplicação completa de autenticação e CRUD de usuários u
 
 ***Tecnologias Utilizadas***
 Backend: NestJS, PostgreSQL, JWT, Joi, Typescript, Passport, TypeORM
+
 Frontend: React, Redux, MUI (Material-UI), Vite, Typescript
+
 Docker: Docker Compose para orquestração dos contêineres
 
 ### Passos para Subir o Projeto com Docker
@@ -18,10 +20,10 @@ Docker: Docker Compose para orquestração dos contêineres
 
 1. **Clone o Repositório**
 
-   ```sh
-   git clone https://github.com/agloks/OM-Code
-   cd seu-repositorio
-   ```
+```sh
+git clone https://github.com/agloks/OM-Code
+cd seu-repositorio
+```
 
 2. **Suba os Contêineres com Docker Compose**
 
@@ -32,8 +34,11 @@ docker-compose up --build
 3. **Acesse a Aplicação**
 
 Backend: O backend estará disponível em http://localhost:3300
+
 Frontend: O frontend estará disponível em http://localhost:5173
 
 3. **Observações**
 
-Uma collection postman está sendo disponibilizado para teste das principais rotas do backend. Nome: OM-Code.postman_collection.json / Versão: 2.1
+Uma collection postman está sendo disponibilizado para teste das principais rotas do backend.
+
+Nome: OM-Code.postman_collection.json / Versão: 2.1
